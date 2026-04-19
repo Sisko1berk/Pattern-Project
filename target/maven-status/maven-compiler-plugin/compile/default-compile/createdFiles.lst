@@ -1,0 +1,8 @@
+com\bim492\Book.class
+com\bim492\DescendingSort.class
+com\bim492\Command.class
+com\bim492\AscendingSort.class
+com\bim492\Main.class
+com\bim492\LibraryManager.class
+com\bim492\ModifyBookCommand.class
+com\bim492\SortStrategy.class
