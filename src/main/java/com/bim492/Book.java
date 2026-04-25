@@ -48,8 +48,12 @@ public class Book implements Serializable {
     }
 
     public void returnBook() {
-        available = true;
-        System.out.println("Book returned successfully.");
+        if (!available) { // Kitap gerçekten ödünç alınmışsa (müsait değilse)
+            available = true;
+            System.out.println("Book returned successfully.");
+        } else { // Kitap zaten kütüphanedeyse ve ödünç alınmamışsa
+            System.out.println("Error: This book is already in the library, you cannot return it!");
+        }
     }
 
     public String getTitle() { return title; }
