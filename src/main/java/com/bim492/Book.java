@@ -79,7 +79,7 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Title: %s | Author: %s | Year: %d | Publisher: %s | ISBN: %s | Desc: %s | Categories: %s | Tags: %s | Available: %s", 
-                title, author, publicationYear, publisher, isbn, description, categories.toString(), tags.toString(), (available ? "Yes" : "No"));
+        return String.format("Title: %s | Author: %s | Year: %d | Publisher: %s | ISBN: %s | Desc: %s | Categories: %s | Tags: %s | Available: %s | Borrow Count: %d", 
+                title, author, publicationYear, publisher, isbn, description, categories.toString(), tags.toString(), (available ? "Yes" : "No"), borrowCount);
     }
 }
