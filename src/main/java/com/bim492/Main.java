@@ -66,7 +66,7 @@ public class Main {
                     
                     List<Book> searchResults = new ArrayList<>();
                     
-                    // Kütüphanedeki kitapları filtrele
+                
                     for (Book b : library.getBooks()) {
                         boolean match = false;
                         if (b.getTitle().toLowerCase().contains(keyword) || 
@@ -89,7 +89,7 @@ public class Main {
                         }
                     }
                     
-                    // Sonuçlar ve Sıralama
+              
                     if (searchResults.isEmpty()) {
                         System.out.println("No books found matching the keyword: '" + keyword + "'");
                     } else {
@@ -100,12 +100,12 @@ public class Main {
                         strategy.sort(searchResults);
                         
                         System.out.println("\nSearch Results:");
-                        // Detayları görmek için önce sadece başlık ve yazarı listeliyoruz
+                 
                         for (int i = 0; i < searchResults.size(); i++) {
                             System.out.println((i + 1) + ". " + searchResults.get(i).getTitle() + " (by " + searchResults.get(i).getAuthor() + ")");
                         }
                         
-                        // Örnek Kullanım Adım 5: Listeden kitap seçip detay görme
+                
                         System.out.print("\nSelect a book number to view details (or 0 to return to main menu): ");
                         int selectedNum = 0;
                         try {
@@ -118,10 +118,10 @@ public class Main {
                         if (selectedNum > 0 && selectedNum <= searchResults.size()) {
                             Book selectedBook = searchResults.get(selectedNum - 1);
                             System.out.println("\n--- Book Details ---");
-                            // Burada toString() çalışır ve tüm detaylar (yıl, ISBN, etiket vs.) ekrana basılır
+                           
                             System.out.println(selectedBook.toString());
                             
-                            // Örnek Kullanım Adım 6: Detayını gördüğün kitabı hemen oradan ödünç alma
+                            
                             System.out.print("\nDo you want to Borrow this book? (y/n): ");
                             if (scanner.nextLine().equalsIgnoreCase("y")) {
                                 selectedBook.borrowBook();
@@ -178,14 +178,14 @@ public class Main {
                         String nDescription = scanner.nextLine();
                         if(nDescription.trim().isEmpty()) nDescription = bookToMod.getDescription();
                         
-                        // KATEGORİ VE ETİKETLER İÇİN YENİ "AKILLI" DÜZENLEME MANTIĞI
+                      
                         List<String> nCategories = new ArrayList<>(bookToMod.getCategories());
                         List<String> nTags = new ArrayList<>(bookToMod.getTags());
                         
                         System.out.print("Do you want to modify Categories & Tags? (y/n): ");
                         if (scanner.nextLine().equalsIgnoreCase("y")) {
                             
-                            // Kategorileri Güncelle
+                           
                             System.out.println("\n-- Update Categories (Leave blank to keep current) --");
                             List<String> tempCats = new ArrayList<>();
                             for (int i = 0; i < 3; i++) {
@@ -194,14 +194,14 @@ public class Main {
                                 String input = scanner.nextLine();
                                 
                                 if (!input.trim().isEmpty()) {
-                                    tempCats.add(input); // Yeni değer girildiyse onu al
+                                    tempCats.add(input); 
                                 } else if (!oldCat.isEmpty()) {
-                                    tempCats.add(oldCat); // Boş bırakıldıysa ve eskisi varsa eskiyi koru
+                                    tempCats.add(oldCat);  
                                 }
                             }
                             nCategories = tempCats;
                             
-                            // Etiketleri Güncelle
+                          
                             System.out.println("\n-- Update Tags (Leave blank to keep current) --");
                             List<String> tempTags = new ArrayList<>();
                             for (int i = 0; i < 3; i++) {

@@ -12,20 +12,20 @@ public class Book implements Serializable {
     private int publicationYear;
     private String isbn;
     private String publisher;
-    private String description; // YENİ EKLENDİ
+    private String description; 
     private List<String> categories;
     private List<String> tags;
     private boolean available;
     private int borrowCount;
 
-    // CONSTRUCTOR GÜNCELLENDİ (description eklendi)
+  
     public Book(String title, String author, int publicationYear, String isbn, String publisher, String description) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
         this.isbn = isbn;
         this.publisher = publisher;
-        this.description = description; // YENİ EKLENDİ
+        this.description = description; 
         this.categories = new ArrayList<>();
         this.tags = new ArrayList<>();
         this.available = true;
@@ -59,7 +59,7 @@ public class Book implements Serializable {
         }
     }
 
-    // GET VE SET METOTLARI (Modify işlemi için hepsi eklendi)
+  
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
     public String getAuthor() { return author; }

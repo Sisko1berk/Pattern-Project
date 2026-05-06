@@ -6,13 +6,13 @@ import java.util.List;
 public class ModifyBookCommand implements Command {
     private Book targetBook;
     
-    // Eski durumu hafızada tutacak değişkenler
+  
     private String oldTitle, oldAuthor, oldIsbn, oldPublisher, oldDescription;
     private int oldYear;
     private List<String> oldCategories;
     private List<String> oldTags;
 
-    // Yeni girilecek değerler
+   
     private String newTitle, newAuthor, newIsbn, newPublisher, newDescription;
     private int newYear;
     private List<String> newCategories;
@@ -34,7 +34,7 @@ public class ModifyBookCommand implements Command {
 
     @Override
     public void execute() {
-        // İşlemi yapmadan önce ESKİ DURUMU hafızaya al
+      
         this.oldTitle = targetBook.getTitle();
         this.oldAuthor = targetBook.getAuthor();
         this.oldYear = targetBook.getPublicationYear();
@@ -44,7 +44,7 @@ public class ModifyBookCommand implements Command {
         this.oldCategories = new ArrayList<>(targetBook.getCategories());
         this.oldTags = new ArrayList<>(targetBook.getTags());
         
-        // Yeni değerleri kitaba uygula
+       
         targetBook.setTitle(newTitle);
         targetBook.setAuthor(newAuthor);
         targetBook.setPublicationYear(newYear);
@@ -59,7 +59,7 @@ public class ModifyBookCommand implements Command {
 
     @Override
     public void undo() {
-        // Geri al dendiğinde HER ŞEYİ eski haline çevir
+        
         targetBook.setTitle(oldTitle);
         targetBook.setAuthor(oldAuthor);
         targetBook.setPublicationYear(oldYear);
